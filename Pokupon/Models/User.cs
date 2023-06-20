@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Pokupon.Models;
 public class User
@@ -8,6 +9,7 @@ public class User
 	public int Id { get; set; }
 	[Required]
 	public string Name { get; set; }
+
 	[Required, EmailAddress]
 	public string Email { get; set; }
 	[Required]
@@ -20,3 +22,7 @@ public class User
 		Password = password;
 	}
 }
+
+
+// get => Name;
+// set => Name = value ?? throw new ArgumentNullException(nameof(value));
